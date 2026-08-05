@@ -1,0 +1,108 @@
+/* ============================================================
+   BAPAN SK — ANIMATIONS / KEYFRAMES
+============================================================ */
+
+/* Line grow (section divider) */
+@keyframes line-grow {
+    0%   { transform: scaleX(0); }
+    50%  { transform: scaleX(1); }
+    100% { transform: scaleX(0); }
+}
+
+/* Button background animation */
+@keyframes btn-bg {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+}
+
+/* Floating / floating-up */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-16px); }
+}
+
+@keyframes float-up {
+    from { transform: translateY(60px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Gradient pulse glow */
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1);    opacity: 0.45; }
+    50%      { transform: scale(1.12); opacity: 0.7; }
+}
+
+/* Rotate (profile ring / spinner) */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Wave hand */
+@keyframes wave-hand {
+    0%, 60%, 100% { transform: rotate(0deg); }
+    10%, 30%      { transform: rotate(18deg); }
+    20%, 40%      { transform: rotate(-8deg); }
+}
+
+/* Typing cursor blink */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+}
+
+/* Mouse wheel scroll */
+@keyframes wheel-scroll {
+    0%   { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(12px); }
+}
+
+/* Preloader letter bounce */
+@keyframes loader-bounce {
+    0%, 40%, 100% { transform: translateY(0); }
+    20%           { transform: translateY(-22px); }
+}
+
+/* Preloader progress bar */
+@keyframes loader-bar {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
+}
+
+/* Wave shift (footer waves) */
+@keyframes wave-shift {
+    0%, 100% { transform: translateX(0); }
+    50%      { transform: translateX(-30px); }
+}
+
+/* Fade in up for AOS-free elements (e.g., hero) */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Shimmer on loading skeleton */
+@keyframes shimmer {
+    0%   { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

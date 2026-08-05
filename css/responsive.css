@@ -1,0 +1,205 @@
+/* ============================================================
+   BAPAN SK — RESPONSIVE STYLESHEET
+   Mobile-first breakpoints: 1024px / 768px / 520px
+============================================================ */
+
+/* ===================== LARGE LAPTOP / TABLET ===================== */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 70px;
+        padding-top: 130px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-desc { margin-left: auto; margin-right: auto; }
+
+    .hero-buttons { justify-content: center; }
+
+    .hero-visual { margin-bottom: 20px; }
+
+    .float-card { font-size: 0.8rem; }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .about-visual { max-width: 440px; margin: 0 auto; }
+
+    .edu-card {
+        grid-template-columns: auto 1fr;
+        gap: 24px;
+    }
+
+    .edu-grades {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 10px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-brand { grid-column: 1 / -1; }
+}
+
+/* ===================== TABLET / MOBILE ===================== */
+@media (max-width: 768px) {
+    .section { padding: 80px 6%; }
+
+    .section-head { margin-bottom: 45px; }
+
+    /* Navbar -> hamburger menu */
+    .hamburger { display: flex; }
+
+    .nav-resume { display: none; }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(78vw, 330px);
+        height: 100vh;
+        height: 100dvh;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        background: var(--nav-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid var(--border-glass);
+        transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 998;
+        padding: 30px 24px;
+    }
+
+    .nav-menu.open { right: 0; }
+
+    .nav-menu .nav-link {
+        font-size: 1.1rem;
+        padding: 12px 18px;
+        border-radius: 12px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-menu .nav-link::after { display: none; }
+
+    .nav-menu .nav-link:hover,
+    .nav-menu .nav-link.active {
+        background: var(--gradient-soft);
+        color: var(--text-primary);
+    }
+
+    /* Overlay behind mobile menu */
+    body.menu-open::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        z-index: 997;
+    }
+
+    .hero { gap: 55px; padding-bottom: 70px; }
+
+    .hero-name { font-size: clamp(2.6rem, 11vw, 3.4rem); }
+
+    .float-card { display: none; }
+
+    .about-info { grid-template-columns: 1fr; }
+
+    .about-exp-badge { right: 0; }
+
+    .form-row { grid-template-columns: 1fr; }
+
+    .testimonial-card { padding: 40px 26px; }
+
+    .testimonial-stars { margin-left: 0; margin-top: 8px; }
+
+    .testimonial-author { flex-wrap: wrap; }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+        background: var(--nav-bg);
+    }
+
+    .slider-prev { left: 4px; }
+    .slider-next { right: 4px; }
+
+    .projects-grid { grid-template-columns: 1fr; }
+
+    .footer-content { grid-template-columns: 1fr; gap: 34px; }
+
+    .footer-bottom { padding: 20px 6%; }
+}
+
+/* ===================== SMALL MOBILE ===================== */
+@media (max-width: 520px) {
+    .section { padding: 70px 5%; }
+
+    .hero-buttons .btn { width: 100%; }
+
+    .hero-socials { justify-content: center; }
+
+    .scroll-down { display: none; }
+
+    .profile-frame { width: 78%; }
+
+    .timeline { padding-left: 6px; }
+
+    .timeline::before { left: 18px; }
+
+    .timeline-item { padding-left: 56px; }
+
+    .timeline-dot { left: 0; width: 36px; height: 36px; }
+
+    .timeline-card { padding: 22px 20px; }
+
+    .edu-card { padding: 26px; grid-template-columns: 1fr; text-align: center; }
+
+    .edu-icon { margin: 0 auto; }
+
+    .edu-grades { flex-direction: column; }
+
+    .contact-form { padding: 28px 22px; }
+
+    .page-banner { min-height: 52vh; padding-top: 130px; }
+
+    #back-to-top {
+        right: 18px;
+        bottom: 18px;
+        width: 46px;
+        height: 46px;
+    }
+
+    .gh-header { justify-content: center; text-align: center; }
+
+    .gh-info { text-align: center; }
+
+    .gh-stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===================== SHORT SCREENS ===================== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero { min-height: auto; padding-top: 120px; }
+
+    .float-card { display: none; }
+
+    .scroll-down { display: none; }
+}
